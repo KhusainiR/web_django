@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %} Modul Books {% endblock %}
+{% block contents %}
+<h1>Data Buku</h1>
+<br>
+    <div class="au-card-inner">
+        <a href="/create"><button class="au-btn au-btn-icon au-btn--blue">
+            <i class="zmdi zmdi-plus"></i>Tambah Data</button></a>
+
+            <div class="table-responsive table-data">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <td>Judul</td>
+                            <td>Deskripsi</td>
+                            <td>Jenis Buku</td>
+                            <td>Penulis</td>
+                            <td>Penerbit</td>
+                            <td>Tahun</td>
+                            <td>Action</td>
+                            <td></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </br>
+                        {% for data in dataset %}
+                        <tr>
+                            <td><h6>{{ data.judul }}</h6></td>
+                            <td><h6>{{ data.deskripsi }}</h6></td>
+                            <td><h6>{{ data.jenis_buku }}</h6></td>
+                            <td><h6>{{ data.penulis }}</h6></td>
+                            <td><h6>{{ data.penerbit }}</h6></td>
+                            <td><h6>{{ data.tahun_terbit }}</h6></td>
+                            <td>
+                                <a href="update/{{ data.id }}"><span class="role member">Update</span></a>
+                                <a href="delete/{{ data.id }}"><span class="role admin">Delete</span></a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+    </div>
+{% endblock %}

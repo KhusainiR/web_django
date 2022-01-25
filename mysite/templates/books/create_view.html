@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block title %} Modul Books {% endblock %}
+
+{% block contents %}
+
+<h1>Input Data Buku</h1>
+<br>
+
+
+<form method="POST"   enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="hidden" name="csrfmiddlewaretoken" value="6urvn7n7766n8P14N4uqjIxBV8sNtq827QkD7CUTJMoXCaQ4zSCSJbn6DMC9b4OY">
+
+    <div class="form-group">
+        <label for="cc-payment" class="control-label mb-1">judul</label>
+        <input id="id_judul" name="judul" type="text" class="form-control" aria-required="true" aria-invalid="false" required>
+    </div>
+    <div class="form-group">
+        <label for="cc-payment" class="control-label mb-1">deskripsi</label>
+        <input id="id_deskripsi" name="deskripsi" type="text" class="form-control" aria-required="true" aria-invalid="false" required>
+    </div>
+    <div class="form-group">
+        <label for="cc-payment" class="control-label mb-1">jenis_buku</label><br>
+        <select id="id_jenis_buku" name="jenis_buku" class="form-control-lg form-control">
+            <option value="Novel">Novel</option>
+            <option value="Buku Digital">Buku Digital</option>
+            <option value="Karya Ilmiah">Karya Ilmiah</option>
+            <option value="Majalah">Majalah</option>
+          </select>
+    </div>
+    <div class="form-group">
+        <label for="cc-payment" class="control-label mb-1">penulis</label>
+        <input id="id_penulis" name="penulis" type="text" class="form-control" aria-required="true" aria-invalid="false" required>
+    </div>
+    <div class="form-group">
+        <label for="cc-payment" class="control-label mb-1">penerbit</label>
+        <input id="id_penerbit" name="penerbit" type="text" class="form-control" aria-required="true" aria-invalid="false" required>
+    </div>
+    <div class="form-group">
+        <label for="cc-payment" class="control-label mb-1">tahun_terbit</label>
+        <input id="id_tahun_terbit" name="tahun_terbit" type="number" class="form-control" aria-required="true" aria-invalid="false" required>
+    </div>
+ 
+    <div class="card-footer">
+        <button type="submit" class="btn btn-success btn-sm mr-4">
+             Simpan
+        </button>
+        <button type="reset" class="btn btn-danger btn-sm">
+             Reset
+        </button>
+    </div>
+</form>
+
+<br>
+<br>
+<a href="/home" >
+<button type="submit" class="btn btn-primary btn-sm mr-4">
+    Kembali Ke Halaman Utama
+</button>
+</a>
+
+{% endblock %}

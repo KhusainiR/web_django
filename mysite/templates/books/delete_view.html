@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %} Modul Books {% endblock %}
+
+{% block contents %}
+
+<h1>Hapus Data Buku</h1>
+<br>
+<br>
+
+<div class="main">
+
+    <div aria-disabled="true">
+    <label for="cc-payment" class="control-label mb-1">Judul :</label>
+    {{ form.judul }}
+    <br>
+    <label for="cc-payment" class="control-label mb-1">Jenis Buku :</label>
+    {{ form.jenis_buku }}
+    <br>
+    <label for="cc-payment" class="control-label mb-1">Penulis :</label>
+    {{ form.penulis }}
+    <br>
+    <label for="cc-payment" class="control-label mb-1">Penerbit :</label>
+    {{ form.penerbit }}
+    <br>
+    <label for="cc-payment" class="control-label mb-1">Tahun Terbit :</label>
+    {{ form.tahun_terbit }}
+    <br>
+    </div>
+
+    <br>
+    <br>
+
+    <form method="POST">
+
+        {% csrf_token %}
+        <label for="cc-payment" class="control-label mb-1">Yakin akan menghapus data ini?   </label>
+        <a href="/home" onclick="return confirm('Yakin?')"> 
+            <button type="submit" class="btn btn-danger btn-sm mr-4">
+                Yes
+            </button>
+        </a>
+    </form>
+
+    
+</div>
+
+<br>
+<br>
+<br>
+<a href="/home" >
+    <button type="submit" class="btn btn-primary btn-sm mr-4">
+        Kembali Ke Halaman Utama
+    </button>
+</a>
+
+{% endblock %}
